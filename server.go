@@ -2,6 +2,7 @@ package main
 
 import ("html/template"
 		"net/http"
+		"fmt"
 
 		"google.golang.org/appengine")
 
