@@ -1,14 +1,18 @@
 package main 
 
 import ("html/template",
-		"net/http")
+		"net/http"
 
-func index_handler(w http.ResponseWriter, r *http.Request){
-
-	t, _ :=template.ParseFiles("index.html")
-}
+		"google.golang.org/appengine")
 
 func main() {
-	http.HandleFunc("/", index_handler)
-	log.Fatal(http.ListenAndServe(":80", nil))
+        http.HandleFunc("/", handle)
+        appengine.Main()
+}
+func handle(w http.ResponseWriter, r *http.Request) {
+		if r.URL.Path != "/" {
+	            http.Redirect(w, r, "/", http.StatusFound)
+	            return
+	        }
+	    fmt.Fprintln(w, "Hello, world!")
 }
