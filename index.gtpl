@@ -9,6 +9,12 @@
 
 	        <input type="submit" value="Login">
 	    </form>
-	    <p>{{.Notice}} <br>Username: {{.Name}} <br>Password: {{.Password}}</p>
+
+	    <p>
+	    	{{.Notice}}
+	    	 
+	    	{{ if .Name != "" && .Password != ""}}
+	    	<br>Username: {{.Name}} 
+	    	<br>Password: {{.Password}}</p>
 	</body>
 </html>
