@@ -16,8 +16,7 @@ import (
 		type templateParams struct {
 				Password string
 				Name     string
-				Notice   string
-				Html	 template.HTML
+				Notice   template.HTML
 		}
 
 func main() {
