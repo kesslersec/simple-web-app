@@ -48,5 +48,4 @@ func handle(w http.ResponseWriter, r *http.Request) {
 		}
 
 		indexTemplate.Execute(w, params)
-
 }
