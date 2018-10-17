@@ -37,9 +37,9 @@ func handle(w http.ResponseWriter, r *http.Request) {
 
 		username := r.FormValue("username")
 		password := r.FormValue("password")
-		params.Name = name
+		params.Name = username
 		params.Password = password
-		if name == "ashlynn" {
+		if username == "ashlynn" {
 			if password == "password" {
 				params.Notice = fmt.Sprintf("Successfully logged in\nUsername: %s\nPassword: %s", username, password)
 			}
