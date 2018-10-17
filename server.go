@@ -23,10 +23,10 @@ func main() {
 		appengine.Main()
 }
 func handle(w http.ResponseWriter, r *http.Request) {
-		if r.URL.Path != "/" {
-				http.Redirect(w, r, "/", http.StatusFound)
-				return
-		}
+		// if r.URL.Path != "/" {
+		// 		http.Redirect(w, r, "/", http.StatusFound)
+		// 		return
+		// }
 
 		params := templateParams{}
 			
