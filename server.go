@@ -50,7 +50,7 @@ func handle(w http.ResponseWriter, r *http.Request) {
 			buffer.WriteString("Ah ah ah, you didn't say the magic word!")
 		}
 		if(username != "" && password != ""){
-			buffer.WriteString("<br>Username: %s<br>Password: %s", username, password)
+			buffer.WriteString(fmt.Sprintf("<br>Username: %s<br>Password: %s", username, password))
 		}
 		params.Notice = template.HTML(buffer.String())
 
