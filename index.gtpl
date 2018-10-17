@@ -9,6 +9,6 @@
 
 	        <input type="submit" value="Login">
 	    </form>
-	    <p>{{Notice}}</p>
+	    <p>{{.Notice}}</p>
 	</body>
 </html>
