@@ -34,11 +34,14 @@ func handle(w http.ResponseWriter, r *http.Request) {
 			indexTemplate.Execute(w, params)
 			return
 		}
-
 		username := r.FormValue("username")
 		password := r.FormValue("password")
+		fmt.Println("username:", username)
+		fmt.Println("password:", password)
 		params.Name = username
 		params.Password = password
+		fmt.Println("Name:", params.Name)
+		fmt.Println("Password:", params.Password)
 		if username == "ashlynn" {
 			if password == "password" {
 				params.Notice = fmt.Sprintf("Successfully logged in\nUsername: %s\nPassword: %s", username, password)
