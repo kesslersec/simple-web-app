@@ -48,7 +48,7 @@ func handle(w http.ResponseWriter, r *http.Request) {
 		} else {
 			buffer.WriteString("Ah ah ah, you didn't say the magic word!")
 		}
-		else if(username != "" && password != ""){
+		if(username != "" && password != ""){
 			buffer.WriteString(fmt.Sprintf("<br>Username: %s<br>Password: %s", username, password))
 		}
 		params.Notice = buffer.String()
