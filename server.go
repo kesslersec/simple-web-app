@@ -4,6 +4,7 @@ import (
 		"net/http"
 		"html/template"
 		"fmt"
+		"bytes'"
 
 		"google.golang.org/appengine"
 		)
@@ -34,17 +35,23 @@ func handle(w http.ResponseWriter, r *http.Request) {
 			indexTemplate.Execute(w, params)
 			return
 		}
+
+		var buffer bytes.Buffer
 		username := r.FormValue("username")
 		password := r.FormValue("password")
 		params.Name = username
 		params.Password = password
 		if username == "ashlynn" {
 			if password == "password" {
-				params.Notice = fmt.Sprintf("Successfully logged in")
+				buffer.WriteString("Successfully logged in")
 			}
 		} else {
-			params.Notice = fmt.Sprintf("Ah ah ah, you didn't say the magic word!")
+			buffer.WriteString("Ah ah ah, you didn't say the magic word!")
 		}
+		else if(username != "" && password != ""){
+			buffer.WriteString(fmt.Sprintf("<br>Username: %s<br>Password: %s", username, password))
+		}
+		params.Notice = buffer.String()
 
 		indexTemplate.Execute(w, params)
 }

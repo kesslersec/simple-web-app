@@ -12,9 +12,6 @@
 
 	    <p>
 	    	{{.Notice}}
-	    	 
-	    	{{ if .Name != "" && .Password != ""}}
-	    	<br>Username: {{.Name}} 
-	    	<br>Password: {{.Password}}</p>
+	    </p>
 	</body>
 </html>
